@@ -14,6 +14,4 @@ class ResultComponent extends Component {
     }
 }
 
-
 export default ResultComponent;
-
