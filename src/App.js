@@ -26,7 +26,6 @@ class App extends Component {
         }
         else {
             this.setState({
-                //Add the value of pressed button to result
                 result: this.state.result + button
             })
         }
