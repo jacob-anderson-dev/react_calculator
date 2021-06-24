@@ -4,9 +4,10 @@ import ResultComponent from './components/ResultComponent';
 import KeyPadComponent from "./components/KeyPadComponent";
 
 class App extends Component {
-    constructor() {
-        super();
 
+    constructor() {
+
+        super();
         this.state = {
             result: ""
         }
@@ -17,14 +18,12 @@ class App extends Component {
         if (button === "=") {
             this.calculate()
         }
-
         else if (button === "C") {
             this.reset()
         }
         else if (button === "CE") {
             this.backspace()
         }
-
         else {
             this.setState({
                 result: this.state.result + button
@@ -32,20 +31,19 @@ class App extends Component {
         }
     };
 
-
     calculate = () => {
+        
         var checkResult = ''
+        
         if (this.state.result.includes('--')) {
             checkResult = this.state.result.replace('--', '+')
         }
-
         else {
             checkResult = this.state.result
         }
 
         try {
             this.setState({
-                // eslint-disable-next-line
                 result: (eval(checkResult) || "") + ""
             })
         } catch (e) {
