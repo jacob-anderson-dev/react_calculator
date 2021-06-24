@@ -34,11 +34,9 @@ class App extends Component {
 
     calculate = () => {
         
-        var checkResult = this.state.result
-
         try {
             this.setState({
-                result: (eval(checkResult) || "") + ""
+                result: (eval(this.state.result) || "") + ""
             })
         } catch (e) {
             this.setState({
