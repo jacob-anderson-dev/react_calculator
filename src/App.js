@@ -26,6 +26,7 @@ class App extends Component {
         }
         else {
             this.setState({
+                //Add the value of pressed button to result
                 result: this.state.result + button
             })
         }
@@ -33,14 +34,7 @@ class App extends Component {
 
     calculate = () => {
         
-        var checkResult = ''
-        
-        if (this.state.result.includes('--')) {
-            checkResult = this.state.result.replace('--', '+')
-        }
-        else {
-            checkResult = this.state.result
-        }
+        var checkResult = this.state.result
 
         try {
             this.setState({
@@ -70,7 +64,7 @@ class App extends Component {
         return (
             <div>
                 <div className="calculator-body">
-                    <h1>Simple Calculator</h1>
+                    <h1>React Calculator</h1>
                     <ResultComponent result={this.state.result} />
                     <KeyPadComponent onClick={this.onClick} />
                 </div>
